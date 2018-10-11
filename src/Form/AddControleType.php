@@ -26,28 +26,31 @@ class AddControleType extends AbstractType
         		'label' => 'intitule',
                 'required' => false,
             ])
-            ->add('description', TextType::class, [
-                'label' => 'description',
+            ->add('score', IntegerType::class, [
+                'label' => 'Cote Max',
+                'required' => false
+            ])
+            ->add('competence', EntityType::class, [
+                'class' => Competence::class,
+                'query_builder' => function(EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                              ->orderBy('c.name', 'ASC');
+                },
+                'choice_label' => 'name',
+                'expanded' => false,
+                'multiple' => false
+            ])
+            ->add('planedDate', DateType::class, [
+                'label' => 'Planifié pour',
                 'required' => false,
             ])
-            ->add('teachers', EntityType::class, [
-                'class' => Teacher::class,
+            ->add('classrooms', EntityType::class, [
+                'class' => Classroom::class,
                 'query_builder' => function(EntityRepository $er) {
-                    return $er->createQueryBuilder('t')
-                            ->innerJoin('t.user', 'u');
+                    return $er->createQueryBuilder('c')
+                            ->orderBy('c.name', 'ASC');
                 },
-                'by_reference' => false,
-                'choice_label' => 'id',
-                'expanded' => true,
-                'multiple' => true,
-            ])
-            ->add('students', EntityType::class, [
-                'class' => Student::class,
-                'query_builder' => function(EntityRepository $er) {
-                    return $er->createQueryBuilder('s')
-                            ->innerJoin('s.user', 'u');
-                },
-                'choice_label' => 'user',
+                'choice_label' => 'name',
                 'expanded' => true,
                 'multiple' => true,
             ]);
@@ -56,7 +59,7 @@ class AddControleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => 'App\Entity\Classroom',
+            'data_class' => 'App\Entity\Controle',
             'csrf_protection' => false,
         ]);
     }
