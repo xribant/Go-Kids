@@ -1,0 +1,70 @@
+{
+    "name": "tilleuls/forgot-password-bundle",
+    "type": "symfony-bundle",
+    "description": "Provides a 'forgot password' feature for a REST API",
+    "keywords": [
+        "Forgot password",
+        "REST",
+        "API"
+    ],
+    "license": "MIT",
+    "homepage": "https://les-tilleuls.coop",
+    "authors": [
+        {
+            "name": "Vincent Chalamon",
+            "email": "vincent@les-tilleuls.coop"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ircmaxell/random-lib": "^1.2",
+        "symfony/config": "^2.3|^3.0|^4.0",
+        "symfony/dependency-injection": "^2.3|^3.0|^4.0",
+        "symfony/event-dispatcher": "^2.3|^3.0|^4.0",
+        "symfony/http-foundation": "^2.3|^3.0|^4.0",
+        "symfony/http-kernel": "^2.3|^3.0|^4.0",
+        "symfony/serializer": "^2.7|^3.0|^4.0"
+    },
+    "require-dev": {
+        "behat/behat": "^3.1",
+        "behat/symfony2-extension": "^2.1",
+        "doctrine/data-fixtures": "^1.1",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/orm": "^2.5",
+        "phpunit/phpunit": "^4.5|^5.6.8",
+        "swiftmailer/swiftmailer": "^5.2.0|^6.0",
+        "symfony/asset": "^2.3|^3.0|^4.0",
+        "symfony/browser-kit": "^2.3|^3.0|^4.0",
+        "symfony/framework-bundle": "^2.8|^3.0|^4.0",
+        "symfony/property-access": "^2.3|^3.0|^4.0",
+        "symfony/security-bundle": "^2.3|^3.0|^4.0",
+        "symfony/swiftmailer-bundle": "^2.3.11|^3.0",
+        "symfony/templating": "^2.3|^3.0|^4.0",
+        "symfony/twig-bundle": "^2.8|^3.0|^4.0",
+        "jms/serializer-bundle": "^1.4|^2.0",
+        "symfony/stopwatch": "^2.3|^3.0|^4.0",
+        "sebastian/comparator": "^1.2.4|^2.0",
+        "symfony/var-dumper": "^2.3|^3.0|^4.0"
+    },
+    "suggest": {
+        "doctrine/doctrine-bundle": "To connect with Doctrine in Symfony project",
+        "doctrine/orm": "To connect with Doctrine"
+    },
+    "autoload": {
+        "psr-4": {
+            "CoopTilleuls\\ForgotPasswordBundle\\": ""
+        },
+        "exclude-from-classmap": ["features/", "tests/"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CoopTilleuls\\ForgotPasswordBundle\\Tests\\": "features/app",
+            "Tests\\ForgotPasswordBundle\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

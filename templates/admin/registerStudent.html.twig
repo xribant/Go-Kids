@@ -1,0 +1,42 @@
+{% extends 'admin/registerUser.html.twig' %}
+
+{% block title %}
+GO-Kids - Création d'un Elève
+{% endblock %}
+
+{% block sectionTitle %}
+Création d'un Elève
+{% endblock %}
+
+
+{% block userType %}
+
+    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+      <h2>Assigner une classe</h2>
+          <table class="table table-striped table-bordered bulk_action">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% if form.classrooms is empty %}
+                <tr><td>Aucune classe créée</td></tr>
+              {% else %}
+                {% for classroom in form.classrooms %}
+                  {% set index = classroom.vars.value %}
+                  {% set entity = form.classrooms.vars.choices[index].data %}
+                    <tr>
+                      <td> {{ form_widget(classroom) }} {{ entity.name }}</td>
+                      <td> {{ entity.description }} </td>
+                    </tr>
+                {% endfor %}
+              {% endif %}
+                                                  
+            </tbody>
+          </table>
+    </div>
+    
+{% endblock %}

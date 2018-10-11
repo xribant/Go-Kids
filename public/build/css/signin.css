@@ -1,0 +1,6 @@
+html,
+body {
+  height: 100%;
+  background: url('../img/classroom.jpg') no-repeat fixed center;
+  background-size: cover;
+}

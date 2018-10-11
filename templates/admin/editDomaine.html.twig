@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+GO Kids - Modification d'un domaine de compétence
+{% endblock %}
+
+{% block content %}
+
+<!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-8 col-sm-10 col-xs-12">
+
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Modification du domaine : {{ domaine.name }} </h2>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                      {{ form_start(form) }}
+                      <form id="register-user" class="form-horizontal form-label-left input_mask">
+
+                        <div class="col-md-6 col-sm-8 col-xs-12 form-group">
+                          <label>Nom: </label>
+                            {{ form_widget(form.name, { 'attr': { 'class': 'form-control', 'id': 'form_name', 'name': 'form[name]', 'value': domaine.name } } ) }}
+                            {{ form_errors(form.name, { 'attr': { 'class': 'form-error'} } ) }}
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <h2>Compétences liées à ce domaine</h2> 
+                            <table class="table table-striped table-bordered bulk_action">
+                              <thead>
+                                <tr>
+                                  <th>Nom</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                {% for competence in domaine.competences %}
+                                  <tr>
+                                    <td> {{ competence.name }} </td>
+                                    <td>
+                                      <a href="{{ path('edit_competence', { 'id': competence.id }) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier </a>
+                                      <a href="{{ path('delete_competence', { 'id': competence.id }) }}" class="btn btn-danger btn-xs" title="Supprimer" onclick="return confirm('Attention !!! \nEtes vous certain de vouloir supprimer cette compétence?')"><i class="fa fa-trash-o"></i> Supprimer </a>
+                                    </td>
+                                  </tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                          </div> 
+                      
+                        <div class="form-group">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <a href="{{ path('dc_manager') }}"><button type="button" class="btn btn-primary">Annuler</button></a>
+                            <button type="submit" class="btn btn-success">Enregistrer</button>
+                          </div>
+                        </div>
+
+                      </form>
+
+                      {{ form_end(form) }}
+                  
+                  </div>
+                </div>
+     
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /page content -->
+
+{% endblock %}
+

@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+              
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Modifier les données de : {% block userName %} {% endblock %}</h2>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    {{ form_start(form) }}
+                    <form id="register-user" class="form-horizontal form-label-left input_mask">
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.firstName, { 'attr': { 'class': 'form-control has-feedback-left', 'id': 'form_firstName', 'name': 'form[firstName]', 'value': user.firstName }} ) }}
+                        {{ form_errors(form.firstName,{ 'attr': { 'class': 'formValidationError'}} ) }}
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.lastName, { 'attr': { 'class': 'form-control has-feedback-left', 'id': 'form_lastName', 'name': 'form[lastName]', 'value': user.lastName } } ) }}
+                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.email, { 'attr': { 'class': 'form-control has-feedback-left', 'id': 'form_email', 'name': 'form[email]', 'value': user.email  } } ) }}
+                        <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.address, { 'attr': { 'class': 'form-control has-feedback-left', 'id': 'form_address', 'name': 'form[address]', 'value': user.address  } } ) }}
+                        <span class="fa fa-map-marker form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-8 col-sm-8 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.city, { 'attr': { 'class': 'form-control has-feedback-left', 'id': 'form_city', 'name': 'form[city]', 'value': user.city } } ) }}
+                        <span class="fa fa-map-marker form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.postalCode, { 'attr': { 'class': 'form-control has-feedback-right', 'id': 'form_postalCode', 'name': 'form[postalCode]', 'value': user.postalCode } } ) }}
+                        <span class="fa fa-map-pin form-control-feedback right" aria-hidden="true"></span>
+                      </div>
+
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.birthDate, { 'attr': { 'class': 'form-control has-feedback-left js-datepicker', 'id': 'form_birthDate', 'name': 'form[birthDate]', 'value': user.birthDate|date('Y-m-d') } } ) }}
+                        {{ form_errors(form.birthDate,{ 'attr': { 'class': 'formValidationError'}} ) }}
+                        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+                        
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                        {{ form_widget(form.phone, { 'attr': { 'class': 'form-control has-feedback-left', 'id': 'form_phone', 'name': 'form[phone]', 'value': user.phone } } ) }}
+                        <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+
+                      {% block userType %} 
+                      
+                      {% endblock %}
+                      
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <a href="{{ path('user_manager') }}"><button type="button" class="btn btn-primary">Annuler</button></a>
+                          <button type="submit" class="btn btn-success">Enregistrer</button>
+                        </div>
+                      </div>
+
+                    </form>
+
+                    {{ form_end(form) }}
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+</div>         
+
+<!-- /page content -->
+
+{% endblock %}
+

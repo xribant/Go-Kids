@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+GO Kids - Gestion des Domaines & Compétences
+{% endblock %}
+
+{% block content %}
+
+<div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+          <div class="title_left">
+              <h3>Gestion des Domaine et Compétences</h3>
+          </div>
+      </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+              
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                      <a href="{{ path('register_domaine') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus-square"></i> Domaine </a>
+                      <a href="{{ path('register_competence') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus-square"></i> Compétence </a>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                  <table id="DC-table" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Domaine</th>
+                          <th>Compétence(s)</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+
+                      {% for domaine in domaines %}
+                        <tr>
+                          <td> {{ domaine.name }} </td>
+                          <td>
+                            {% for competence in domaine.competences %}
+                              {{ competence.name }} {% if domaine.competences|length > 1 %} - {% endif %}
+                            {% endfor %}
+                          </td>
+                          <td>
+                              <a href="{{ path('edit_domaine', { 'id': domaine.id }) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier </a>
+                              <a href="{{ path('delete_domaine', { 'id': domaine.id }) }}" class="btn btn-danger btn-xs" title="Supprimer" onclick="return confirm('Attention !!! \nEtes vous certain de vouloir supprimer ce domaine? Toutes les compétences liées à ce domaine le seront également')"><i class="fa fa-trash-o"></i> Supprimer </a>
+                          </td>
+
+                        </tr>
+                      {% endfor %}
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+</div>
+              
+        <!-- /page content -->
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+GO Kids - Gestion des classes
+{% endblock %}
+
+{% block content %}
+
+<div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+          <div class="title_left">
+              <h3>Gestion des Classes</h3>
+          </div>
+      </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+              
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                      <a href="{{ path('register_classroom') }}" class="btn btn-primary btn-xs"> <i class="fa fa-users"></i> Nouvelle Classe </a>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <table id="classrooms-table" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Nom</th>
+                          <th>Description</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+
+                      {% for classroom in classrooms %}
+                        <tr>
+                            <td>{{ classroom.name }}</td>
+                            <td>{{ classroom.description }}</td>
+
+                            <td>
+                            	<a href="{{ path('edit_classroom', { 'id': classroom.id }) }}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier </a>
+                            	<a href="{{ path('delete_classroom', { 'id': classroom.id }) }}" class="btn btn-danger btn-xs" title="Supprimer" onclick="return confirm('Attention !!! \nEtes vous certain de vouloir supprimer cette classe?')"><i class="fa fa-trash-o"></i> Supprimer </a>
+                            </td>
+                            
+                        </tr>
+                      {% endfor %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+</div>
+              
+        <!-- /page content -->
+
+{% endblock %}

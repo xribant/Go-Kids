@@ -1,0 +1,24 @@
+<html>
+<head>
+	</head>
+	<body>
+{# templates/emails/registration.html.twig #}
+<h3>You did it! You registered!</h3>
+
+Hi! You're successfully registered.
+
+{% for message in app.flashes('warning') %}
+    <div class="flash-warning">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{# example, assuming you have a route named "login" #}
+To login, go to: <a href="{{ url('security_login_form') }}"> Here </a>.
+
+Thanks!
+
+{# Makes an absolute URL to the /images/logo.png file #}
+<img src="{{ absolute_url(asset('build/img/go-kids-logo-login.png')) }}">
+</body>
+</html>

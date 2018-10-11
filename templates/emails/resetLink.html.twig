@@ -1,0 +1,14 @@
+<html>
+{# templates/emails/resetLink.html.twig #}
+
+{# Makes an absolute URL to the /images/logo.png file #}
+<img src="{{ absolute_url(asset('build/img/go-kids-logo-login.png')) }}">
+
+<h3>Bonjour!</h3>
+Veuillez cliquer sur ce lien pour créer un nouveau mot de passe.<br><br>
+
+<a href="{{absolute_url(path('resetting', {'id': user.id, 'token': user.token}))}}">Changer le mot de passe</a>
+
+Merci.
+</html>
+
