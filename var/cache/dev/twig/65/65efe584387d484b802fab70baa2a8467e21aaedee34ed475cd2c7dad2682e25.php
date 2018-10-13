@@ -211,7 +211,10 @@ class __TwigTemplate_ebe1b9340350c21d2307200cfabacecaa9080ebd01c897860ca1d622959
         echo "\"><i class=\"fa fa-users\"></i> Mes Elèves</a></li>
                   <li><a><i class=\"fa fa-edit\"></i> Contrôles <span class=\"fa fa-chevron-down\"></span></a>
                     <ul class=\"nav child_menu\">
-                      <li><a href=\"#\">Nouveau</a></li>
+                      <li><a href=\"";
+        // line 65
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new_controle");
+        echo "\">Nouveau</a></li>
                       <li><a href=\"";
         // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pending_controles");
@@ -546,7 +549,7 @@ class __TwigTemplate_ebe1b9340350c21d2307200cfabacecaa9080ebd01c897860ca1d622959
 
         \$('.js-datepicker').datepicker({
             format: 'yyyy-mm-dd',
-            language: 'en'
+            language: 'fr'
         });
 
         \$('#classroomWizard').smartWizard({
@@ -581,7 +584,7 @@ class __TwigTemplate_ebe1b9340350c21d2307200cfabacecaa9080ebd01c897860ca1d622959
 
     public function getDebugInfo()
     {
-        return array (  525 => 208,  519 => 205,  515 => 204,  511 => 203,  507 => 202,  503 => 201,  499 => 200,  495 => 199,  491 => 198,  487 => 197,  483 => 196,  479 => 195,  475 => 194,  471 => 193,  467 => 192,  463 => 191,  457 => 188,  450 => 184,  444 => 181,  440 => 180,  434 => 177,  430 => 176,  425 => 174,  420 => 172,  416 => 171,  412 => 170,  407 => 168,  403 => 167,  399 => 166,  395 => 165,  391 => 164,  386 => 162,  381 => 160,  376 => 158,  371 => 156,  366 => 154,  361 => 152,  357 => 150,  348 => 149,  338 => 130,  329 => 129,  304 => 131,  302 => 129,  289 => 119,  277 => 114,  234 => 74,  230 => 73,  226 => 72,  217 => 66,  210 => 62,  193 => 50,  185 => 44,  176 => 43,  163 => 37,  157 => 34,  153 => 33,  149 => 32,  145 => 31,  141 => 30,  135 => 27,  130 => 25,  125 => 23,  120 => 21,  115 => 19,  112 => 18,  103 => 17,  93 => 14,  84 => 13,  72 => 245,  70 => 149,  66 => 147,  64 => 43,  59 => 40,  57 => 17,  53 => 15,  51 => 13,  46 => 11,  34 => 1,);
+        return array (  528 => 208,  522 => 205,  518 => 204,  514 => 203,  510 => 202,  506 => 201,  502 => 200,  498 => 199,  494 => 198,  490 => 197,  486 => 196,  482 => 195,  478 => 194,  474 => 193,  470 => 192,  466 => 191,  460 => 188,  453 => 184,  447 => 181,  443 => 180,  437 => 177,  433 => 176,  428 => 174,  423 => 172,  419 => 171,  415 => 170,  410 => 168,  406 => 167,  402 => 166,  398 => 165,  394 => 164,  389 => 162,  384 => 160,  379 => 158,  374 => 156,  369 => 154,  364 => 152,  360 => 150,  351 => 149,  341 => 130,  332 => 129,  307 => 131,  305 => 129,  292 => 119,  280 => 114,  237 => 74,  233 => 73,  229 => 72,  220 => 66,  216 => 65,  210 => 62,  193 => 50,  185 => 44,  176 => 43,  163 => 37,  157 => 34,  153 => 33,  149 => 32,  145 => 31,  141 => 30,  135 => 27,  130 => 25,  125 => 23,  120 => 21,  115 => 19,  112 => 18,  103 => 17,  93 => 14,  84 => 13,  72 => 245,  70 => 149,  66 => 147,  64 => 43,  59 => 40,  57 => 17,  53 => 15,  51 => 13,  46 => 11,  34 => 1,);
     }
 
     public function getSourceContext()
@@ -650,7 +653,7 @@ class __TwigTemplate_ebe1b9340350c21d2307200cfabacecaa9080ebd01c897860ca1d622959
                   <li><a href=\"{{ path('mystudents_manager') }}\"><i class=\"fa fa-users\"></i> Mes Elèves</a></li>
                   <li><a><i class=\"fa fa-edit\"></i> Contrôles <span class=\"fa fa-chevron-down\"></span></a>
                     <ul class=\"nav child_menu\">
-                      <li><a href=\"#\">Nouveau</a></li>
+                      <li><a href=\"{{ path('new_controle') }}\">Nouveau</a></li>
                       <li><a href=\"{{ path('pending_controles') }}\">Planifiés</a></li>
                       <li><a href=\"#\">Archives</a></li>
                     </ul>
@@ -816,7 +819,7 @@ class __TwigTemplate_ebe1b9340350c21d2307200cfabacecaa9080ebd01c897860ca1d622959
 
         \$('.js-datepicker').datepicker({
             format: 'yyyy-mm-dd',
-            language: 'en'
+            language: 'fr'
         });
 
         \$('#classroomWizard').smartWizard({
@@ -832,6 +835,6 @@ class __TwigTemplate_ebe1b9340350c21d2307200cfabacecaa9080ebd01c897860ca1d622959
 \t \t
     {% endblock %}        
     
-</html>", "base.html.twig", "/Users/ribantxa/Sites/go-kids.be/templates/base.html.twig");
+</html>", "base.html.twig", "/Users/ribantxa/Sites/Go-Kids/templates/base.html.twig");
     }
 }

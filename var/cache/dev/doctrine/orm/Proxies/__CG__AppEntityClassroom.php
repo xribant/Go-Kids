@@ -64,10 +64,10 @@ class Classroom extends \App\Entity\Classroom implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'teachers', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'students'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'teachers', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'students', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'controles'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'teachers', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'students'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'teachers', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'students', '' . "\0" . 'App\\Entity\\Classroom' . "\0" . 'controles'];
     }
 
     /**
@@ -296,6 +296,39 @@ class Classroom extends \App\Entity\Classroom implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeStudent', [$student]);
 
         return parent::removeStudent($student);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getControles(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getControles', []);
+
+        return parent::getControles();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addControle(\App\Entity\Controle $controle): \App\Entity\Classroom
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addControle', [$controle]);
+
+        return parent::addControle($controle);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeControle(\App\Entity\Controle $controle): \App\Entity\Classroom
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeControle', [$controle]);
+
+        return parent::removeControle($controle);
     }
 
 }

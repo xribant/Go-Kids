@@ -62,7 +62,7 @@
                   <li><a href="{{ path('mystudents_manager') }}"><i class="fa fa-users"></i> Mes Elèves</a></li>
                   <li><a><i class="fa fa-edit"></i> Contrôles <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Nouveau</a></li>
+                      <li><a href="{{ path('new_controle') }}">Nouveau</a></li>
                       <li><a href="{{ path('pending_controles') }}">Planifiés</a></li>
                       <li><a href="#">Archives</a></li>
                     </ul>
@@ -228,7 +228,7 @@
 
         $('.js-datepicker').datepicker({
             format: 'yyyy-mm-dd',
-            language: 'en'
+            language: 'fr'
         });
 
         $('#classroomWizard').smartWizard({

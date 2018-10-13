@@ -24,6 +24,7 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'register_classroom' => array(array(), array('_controller' => 'App\\Controller\\ClassroomController::registerClassroom'), array(), array(array('text', '/admin/classroom/register')), array(), array()),
         'edit_classroom' => array(array('id'), array('_controller' => 'App\\Controller\\ClassroomController::editClassroom'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/classroom/edit')), array(), array()),
         'delete_classroom' => array(array('id'), array('_controller' => 'App\\Controller\\ClassroomController::deleteClassroom'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/classroom/delete')), array(), array()),
+        'new_controle' => array(array(), array('_controller' => 'App\\Controller\\ControleController::addControle'), array(), array(array('text', '/controles/new')), array(), array()),
         'pending_controles' => array(array(), array('_controller' => 'App\\Controller\\ControleController::controlesManager'), array(), array(array('text', '/controles/pending')), array(), array()),
         'home' => array(array(), array('_controller' => 'App\\Controller\\CoreController::indexAction'), array(), array(array('text', '/')), array(), array()),
         'dc_manager' => array(array(), array('_controller' => 'App\\Controller\\DCController::DCManager'), array(), array(array('text', '/admin/DC/manager')), array(), array()),

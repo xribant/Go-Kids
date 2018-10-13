@@ -241,6 +241,6 @@ GO Kids - Mes Contrôles
               
         <!-- /page content -->
 
-{% endblock %}", "mycontroles/pendingControles.html.twig", "/Users/ribantxa/Sites/go-kids.be/templates/mycontroles/pendingControles.html.twig");
+{% endblock %}", "mycontroles/pendingControles.html.twig", "/Users/ribantxa/Sites/Go-Kids/templates/mycontroles/pendingControles.html.twig");
     }
 }

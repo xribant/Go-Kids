@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Classroom;
-use App\Entity\Student;
+use App\Entity\Competence;
 use App\Entity\Teacher;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -41,7 +41,8 @@ class AddControleType extends AbstractType
                 'multiple' => false
             ])
             ->add('planedDate', DateType::class, [
-                'label' => 'Planifié pour',
+                'widget' => 'single_text',
+                'html5' => false,
                 'required' => false,
             ])
             ->add('classrooms', EntityType::class, [

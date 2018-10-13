@@ -381,6 +381,6 @@ GO Kids - Création d'une classe
         
 {% endblock %}
 
-", "admin/registerClassroom.html.twig", "/Users/ribantxa/Sites/go-kids.be/templates/admin/registerClassroom.html.twig");
+", "admin/registerClassroom.html.twig", "/Users/ribantxa/Sites/Go-Kids/templates/admin/registerClassroom.html.twig");
     }
 }

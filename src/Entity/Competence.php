@@ -41,6 +41,8 @@ class Competence
         $this->controles = new ArrayCollection();
     }
 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -100,4 +102,5 @@ class Competence
 
         return $this;
     }
+
 }

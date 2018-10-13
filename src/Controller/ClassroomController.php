@@ -108,27 +108,6 @@ class ClassroomController extends AbstractController
 			->getRepository(classroom::class)
 			->findOneBy(['id' => $id]);
 
-		/*
-		$classroomTeachers = $classroom->getTeachers();
-
-		if($classroomTeachers)
-		{
-			foreach($classroomTeachers as $oneTeacher)
-			{
-				$classroom->removeTeacher($oneTeacher);
-			}
-		}
-
-		$classroomStudents = $classroom->getStudents();
-
-		if($classroomStudents)
-		{
-			foreach($classroomStudents as $oneStudent)
-			{
-				$classroom->removeStudent($oneStudent);
-			}
-		}
-		*/
 		$entityManager = $this->getDoctrine()->getManager();
 		$entityManager->remove($classroom);
 		$entityManager->flush();

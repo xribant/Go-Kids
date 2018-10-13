@@ -58,11 +58,11 @@ class Controle
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Classroom", inversedBy="controles")
      */
-    private $classroom;
+    private $classrooms;
 
     public function __construct()
     {
-        $this->classroom = new ArrayCollection();
+        $this->classrooms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -123,7 +123,7 @@ class Controle
         return $this->planedDate;
     }
 
-    public function setPlanedDate(?\DateTimeInterface $planedDate): self
+    public function setPlanedDate(\DateTimeInterface $planedDate): self
     {
         $this->planedDate = $planedDate;
 
@@ -155,17 +155,17 @@ class Controle
     }
 
     /**
-     * @return Collection|Classroom[]
+     * @return Collection|Classrooms[]
      */
-    public function getClassroom(): Collection
+    public function getClassrooms(): Collection
     {
-        return $this->classroom;
+        return $this->classrooms;
     }
 
     public function addClassroom(Classroom $classroom): self
     {
-        if (!$this->classroom->contains($classroom)) {
-            $this->classroom[] = $classroom;
+        if (!$this->classrooms->contains($classroom)) {
+            $this->classrooms[] = $classroom;
         }
 
         return $this;
@@ -173,8 +173,8 @@ class Controle
 
     public function removeClassroom(Classroom $classroom): self
     {
-        if ($this->classroom->contains($classroom)) {
-            $this->classroom->removeElement($classroom);
+        if ($this->classrooms->contains($classroom)) {
+            $this->classrooms->removeElement($classroom);
         }
 
         return $this;
