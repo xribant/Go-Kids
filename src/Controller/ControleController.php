@@ -53,4 +53,12 @@ class ControleController extends AbstractController
 		return $this->render('controles/pendingControles.html.twig', ['controles' => $pendingControles]);
 	}
 
+	/**
+	* @Route("/controles/delete", name="delete_controle")
+	*/
+	public function deleteControle(Request $request)
+	{
+		
+	}
+
 }
